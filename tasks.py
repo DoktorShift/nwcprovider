@@ -429,8 +429,8 @@ async def _on_list_transactions(
             {
                 "type": "outgoing" if p.is_out else "incoming",
                 "invoice": p.bolt11,
-                # Fallback chain so a human-readable description reaches the
-                # NWC client. Mirror of _on_lookup_invoice.
+                # Fallback chain so a human-readable description reaches
+                # the NWC client. Mirror of `_on_lookup_invoice`
                 "description": (
                     (p.extra or {}).get("comment") or invoice_data.description or p.memo
                 ),
